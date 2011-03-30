@@ -19,6 +19,7 @@
 			width: 980px;
 			border: 1px solid silver;
 			margin: 10px auto;
+            margin-bottom: 100px;
 		}
 		.test {
 			border: 1px solid silver;
@@ -33,11 +34,13 @@
 		
 	</style>
 
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/prototype/1.6.0.3/prototype.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.2/scriptaculous.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/prototype/1.7.0.0/prototype.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/scriptaculous/1.8.3/scriptaculous.js"></script>
 
 	<script type="text/javascript" src="../opentip.js"></script>
 	<script type="text/javascript">
+//        Opentip.useCss3Transitions = false;
+//        Opentip.useScriptaculousTransitions = true;
 		Opentip.debugging = true;
 // 		Opentip.defaultStyle = 'rounded';
 		Opentip.styles.codeSample = {
@@ -53,7 +56,6 @@
 <body>
 
 <div id="container">
-
 
 	<div class="test" id="id1" style="cursor: pointer;">
 		All styles without title
@@ -125,7 +127,7 @@
 
 	<br />
 
-	<div class="test" id="testest" onclick="javascript:Tips.add(this, event, 'test test etset setset sets et', 'title', { style: 'standard', stem: true, tipJoint: [ 'left', 'middle' ], targetJoint: [ 'right', 'middle' ], target: true, hideOn: 'click' });">
+	<div class="test" id="testest" onclick="javascript:Tips.add(this, event, 'test test etset setset sets et', 'title', { style: 'standard', stem: true, tipJoint: [ 'left', 'middle' ], targetJoint: [ 'right', 'middle' ], target: true, hideOn: 'click', showEffectDuration: 0.2, hideEffectDuration: 3 });">
 		Just for test purposes
 	</div>
 
@@ -136,6 +138,14 @@
 	</div>
 	<script type="text/javascript">
 		$('testE').addTip({ title: 'Ajax test', hideTrigger: 'closeButton', targetJoint: [ 'right', 'middle'], target: true, tipJoint: ['left', 'bottom'], stem: ['left','bottom'], ajax: { url: 'ajaxtest.html' } });
+	</script>
+	<br />
+
+	<div class="test" id="testE2">
+		Bad Ajax. Click the text to close it.
+	</div>
+	<script type="text/javascript">
+		$('testE2').addTip({ title: 'Ajax test', hideTrigger: null, targetJoint: [ 'right', 'middle'], target: true, tipJoint: ['left', 'bottom'], stem: ['left','bottom'], ajax: { url: 'ajaxtest_nonexisting.html' } });
 	</script>
 	<br />
 
@@ -227,7 +237,7 @@
 		Testing the $(element).addTip() function;
 	</div>
 	<script type="text/javascript">
-		$('testI').addTip('test');
+		$('testI').addTip('Hi, this is a very good test! Really impressive.');
 	</script>
 
 
@@ -398,6 +408,41 @@
 		$('testMultipleAddtip').addTip('Left', { target: true, tipJoint: [ 'right', 'middle' ] });
 	</script>
 
+
+    <br />
+    
+	<div class="test">
+      <a href="javascript:undefined;" id="testAppearFade">Appear / Fade</a><br />
+      <a href="javascript:undefined;" id="testGrowShrink">Grow / Shrink</a><br />
+      <a href="javascript:undefined;" id="testBlind">Blind down / up</a><br />
+      <a href="javascript:undefined;" id="testCondensePuff">Condense / Puff</a><br />
+      <a href="javascript:undefined;" id="testGrowPuff">Grow / Puff</a><br />
+      <a href="javascript:undefined;" id="testCondenseFade">Condense / Fade</a><br />
+      <a href="javascript:undefined;" id="testRotate">Rotate</a><br />
+	</div>
+    <script type="text/javascript">
+      Opentip.styles.effects = {
+        showEffectDuration: 0.8, hideEffectDuration: 0.8, stem: true
+      };
+      $('testAppearFade').addTip('Test', { showEffect: 'appear', hideEffect: 'fade', style: 'effects' })
+      $('testGrowShrink').addTip('Test', { showEffect: 'grow', hideEffect: 'shrink', style: 'effects' })
+      $('testBlind').addTip('Test', { showEffect: 'blindDown', hideEffect: 'blindUp', style: 'effects' })
+      $('testCondensePuff').addTip('Test', { showEffect: 'condense',  hideEffect: 'puff', style: 'effects', showOn: 'click', hideOn: 'click' })
+      $('testGrowPuff').addTip('Test', { showEffect: 'grow',  hideEffect: 'puff', style: 'effects' })
+      $('testCondenseFade').addTip('Test', { showEffect: 'condense',  hideEffect: 'fade', style: 'effects' })
+      $('testRotate').addTip('Test', { showEffect: 'rotate',  hideEffect: 'rotate', style: 'effects', showOn: 'click', hideOn: 'click' })
+    </script>
+
+    
+	<br />
+	<div class="test">
+      <div ot="Hi this is a very simple tooltip.">Just defining ot.</div>
+      <div ot="Hi" ot-delay="0.99" ot-style="glass">Delay 0.99, style glass.</div>
+      <a href="ajaxtest.html" ot="true" ot-show-on="click" ot-ajax="true" ot-stem="true" ot-tip-joint="[ 'center', 'bottom' ]">Testing AJAX. tip joint: center/bottom</a>
+      <div ot="Hi" ot-show-effect="condense" ot-hide-effect="puff">Testing the inline HTML options.</div>
+      <div ot="Hi" ot-show-effect-duration="1" ot-hide-effect-duration="1" ot-show-effect="rotate" ot-hide-effect="rotate" ot-fallback-show-effect="appear" ot-fallback-hide-effect="fade">Testing fallback effects. Should appear/fade with CSS3 disabled.</div>
+	</div>
+    
 
 	<div id="helper" style="background: rgba(255, 0, 0, 0.2);position: absolute;"></div>
 
