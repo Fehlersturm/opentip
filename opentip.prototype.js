@@ -1,7 +1,7 @@
 /**
  ** More info at http://www.opentip.org
  **
- ** Copyright (c) 2009, Matthias Loitsch
+ ** Copyright (c) 2009, Matias Meno
  ** Graphics by Tjandra Mayerhold
  **
  ** Permission is hereby granted, free of charge, to any person obtaining a copy

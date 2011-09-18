@@ -50,7 +50,7 @@ If you have ideas, please write me!
 
 
 ## Author
-Opentip is written by Matthias Loitsch.<br>
+Opentip is written by Matias Meno.<br>
 All graphics by Tjandra Mayerhold.
 
 ### Contributors
@@ -63,7 +63,7 @@ Thanks to the following people for providing bug reports, feature requests and s
 If I forgot somebody, please just tell me.
 
 ## License
-Copyright (c) 2009 Matthias Loitsch<br>
+Copyright (c) 2009 Matias Meno<br>
 Licenced under the MIT Licence.
 
 
