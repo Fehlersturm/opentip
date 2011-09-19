@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="matias meno" />
+
+	<title>Opentip tests</title>
+
+	<style type="text/css">
+		@import "../opentip.css";
+		
+		
+		body {
+			font-family: arial, sans-serif;
+			font-size: 14px;
+		}
+		
+		#container {
+			width: 980px;
+			border: 1px solid silver;
+			margin: 10px auto;
+            margin-bottom: 100px;
+		}
+		.test {
+			border: 1px solid silver;
+			margin: 10px 15px;
+			display: inline-block;
+			width: 200px;
+			padding: 5px 10px;
+			background: #eeeeee;
+			-moz-border-radius: 3px;
+			-webkit-border-radius: 3px;
+		}
+		
+	</style>
+
+	<script type="text/javascript" src="./jquery-1.6.2.min.js"></script>
+
+	<script type="text/javascript" src="../opentip.jquery.js"></script>
+    <!--[if lt IE 9]><script src="../excanvas.js"></script><![endif]-->
+    <script src="../excanvas.js"></script>
+	<script type="text/javascript">
+//        Opentip.useCss3Transitions = false;
+//        Opentip.useScriptaculousTransitions = true;
+		Opentip.debugging = true;
+// 		Opentip.defaultStyle = 'rounded';
+		Opentip.styles.codeSample = {
+			showOn: 'click',
+			hideOn: 'click',
+			targetJoint: [ 'right', 'middle' ],
+			tipJoint: [ 'left', 'middle' ],
+			stem: true
+		}
+	</script>
+
+</head>
+<body>
+
+<div id="container">
+
+  
+  <div data-ot="Yo man!" data-ot-options='{"test":123}'>Bla</div>
+<!--  <div data-ot='{"test":123}'>Bla</div>-->
+
+</div>
+
+</body>
